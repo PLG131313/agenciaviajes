@@ -1,13 +1,20 @@
-import express, {json} from 'express';
-import { paginaInicio, paginaNosotros , paginaViajes , paginaTestimonios , paginaDetalleViajes , guardarTestimonios} from "../controllers/paginaController.js";
+import express from 'express';
+import { paginaInicio, paginaNosotros, paginaViajes, paginaTestimonios, paginaDetalleViajes, guardarTestimonios } from "../controllers/paginaController.js";
+import contactoRoutes from "./contacto.js";
 
 const router = express.Router();
+
+router.use(contactoRoutes);
 
 router.get("/", paginaInicio);
 router.get("/nosotros", paginaNosotros);
 router.get("/viajes", paginaViajes);
 router.get("/testimonios", paginaTestimonios);
 router.get("/viajes/:slug", paginaDetalleViajes);
+router.post("/testimonios", guardarTestimonios);
+
+export default router;
+
 
 router.get("/viajes/:slug", async (req, res) => {
     try {
@@ -29,4 +36,3 @@ router.get("/viajes/:slug", async (req, res) => {
 
 router.post("/testimonios", guardarTestimonios);
 
-export default router;
