@@ -13,7 +13,6 @@ export const Testimonial = db.define("testimoniales", {
     correoelectronico: {
         type: Sequelize.STRING,
         allowNull: false,
-        //unique: true
     },
     mensaje: {
         type: Sequelize.STRING

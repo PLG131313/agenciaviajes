@@ -1,6 +1,3 @@
-import Sequelize from "sequelize";
-import db from "../config/db.js";
-
 export const Contacto = db.define("contactos", {
     id: {
         type: Sequelize.INTEGER,
@@ -18,6 +15,14 @@ export const Contacto = db.define("contactos", {
     mensaje: {
         type: Sequelize.TEXT,
         allowNull: false
+    },
+    valoracion: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        validate: {
+            min: 1,
+            max: 5
+        }
     }
 });
 

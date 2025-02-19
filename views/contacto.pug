@@ -9,11 +9,19 @@ block contenido
                 form(action="/contacto" method="POST")
                     .form-group
                         label(for="nombre") Nombre
-                        input#nombre(type="text", placeholder="Tu nombre" name="nombre" class="form-control")
+                        input#nombre(type="text", placeholder="Tu nombre", name="nombre", class="form-control")
                     .form-group
                         label(for="correo") Correo Electrónico
-                        input#correo(type="email", placeholder="Tu correo electrónico" name="correo" class="form-control")
+                        input#correo(type="email", placeholder="Tu correo electrónico", name="correo" class="form-control")
                     .form-group
                         label(for="mensaje") Mensaje
                         textarea#mensaje(name="mensaje" class="form-control" placeholder="Tu mensaje" rows=4)
+                    .form-group
+                        label(for="valoracion") Valoración (1-5)
+                        select#valoracion(name="valoracion" class="form-control")
+                            option(value="1") 1 - Muy Malo
+                            option(value="2") 2 - Malo
+                            option(value="3" selected) 3 - Regular
+                            option(value="4") 4 - Bueno
+                            option(value="5") 5 - Excelente
                     input.btn.btn-primary.btn-block(type="submit" value="Enviar Mensaje")
