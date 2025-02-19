@@ -4,15 +4,12 @@ block contenido
     main.container.mt-5
         h1.text-center.mt-5 Formulario de Contacto
 
-        if mensajeExito
-            .alert.alert-success.text-center= mensajeExito
-
         .row
             .col-md-8.offset-md-2
                 form(action="/contacto" method="POST")
                     .form-group
                         label(for="nombre") Nombre
-                        input#nombre(type="text", placeholder="Tu nombre", name="nombre" class="form-control")
+                        input#nombre(type="text", placeholder="Tu nombre", name="nombre", class="form-control")
                     .form-group
                         label(for="correo") Correo Electrónico
                         input#correo(type="email", placeholder="Tu correo electrónico", name="correo" class="form-control")
