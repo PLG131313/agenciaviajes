@@ -1,3 +1,6 @@
+import Sequelize from "sequelize";
+import db from "../config/db.js";
+
 export const Contacto = db.define("contactos", {
     id: {
         type: Sequelize.INTEGER,
